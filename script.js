@@ -1,22 +1,23 @@
-// scripts.js
-document.addEventListener('DOMContentLoaded', () => {
+// JavaScript, um den aktiven Tab basierend auf der Scroll-Position zu markieren
+document.addEventListener("DOMContentLoaded", function() {
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav ul li a');
+    const navLinks = document.querySelectorAll('.navbar a');
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', function() {
         let current = '';
-        
-        sections.forEach(section => {
+
+        sections.forEach(function(section) {
             const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 60) {
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - sectionHeight / 3) {
                 current = section.getAttribute('id');
             }
         });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
+        navLinks.forEach(function(navLink) {
+            navLink.classList.remove('active');
+            if (navLink.getAttribute('href').includes(current)) {
+                navLink.classList.add('active');
             }
         });
     });

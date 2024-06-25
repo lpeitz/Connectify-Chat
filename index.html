@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
+    <video autoplay muted loop id="bgVideo">
+        <source src="Video/Background.mp4" type="video/mp4">
+    </video>
+    <nav class="navbar">
         <ul>
-            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#the-app">Die App</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#download">Download</a></li>
@@ -68,9 +71,11 @@
     <section id="download">
         <h2>Download</h2>
         <div class="download-buttons">
-            <a href="#"><img src="./Images/Appstore.png" alt="Appstore"></a>
-            <p>Vorerst nur im Appstore</p>
-        </div>
+    <a href="https://youtube.com" class="appstore-link">
+        <img src="./Images/Appstore.png" alt="Appstore">
+    </a>
+    <p>Vorerst nur im Appstore</p>
+</div>
     </section>
     
     <section id="teams">
@@ -78,10 +83,10 @@
         <div class="team-members">
             <div class="team-member">
                 <div class="member-photo"><img src="./Images/Photoplaceholder.jpg" alt=""></div>
-            <h2><p>Johan Franke</p></h2>
-            <p>Finanzen und Marketing</p>
+                <h2><p>Johan Franke</p></h2>
+                <p>Finanzen und Marketing</p>
             </div>
-                <p> Die App wurde entwickelt von </p>
+            <p> Die App wurde entwickelt von </p>
             <div class="team-member">
                 <div class="member-photo"><img src="./Images/Photoplaceholder.jpg" alt=""></div>
                 <h2><p>Louis Peitz</p></h2>
@@ -107,7 +112,14 @@
     </section>
     
     <footer>
-        <p>&copy; 2024 Connectify.com</p>
+        <div class="legal">
+            <p>&copy; 2024 Connectify.com</p>
+            <p>Diese Website verwendet Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten. Durch die Nutzung dieser Website stimmen Sie der Verwendung von Cookies zu.</p>
+            <p><a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutzerklärung</a></p>
+        </div>
     </footer>
+    
+
+    <script src="script.js"></script>
 </body>
 </html>

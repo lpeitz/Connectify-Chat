@@ -1,42 +1,102 @@
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    max-width: 100%;
+    max-height: 100vh;
+}
+
+body, nav, header, section, footer {
+    position: relative;
+    z-index: 1;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #2c2c2c;
     color: #f0f0f0;
 }
 
-nav {
+.navbar {
     position: fixed;
     top: 0;
-    width: 100%;
-    background-color: #333;
-    padding: 1em 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
+    background-color: black; /* Hintergrundfarbe entfernt */
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
 }
 
-nav ul {
+.navbar ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
-nav ul li {
-    margin: 0 1em;
+.navbar li {
+    margin-right: 10px;
 }
 
-nav ul li a {
-    color: white;
+.navbar a {
+    color: white; /* Weiße Schrift beibehalten */
     text-decoration: none;
-    padding: 0.5em 1em;
-    transition: background-color 0.3s;
+    transition: color 0.2s ease;
 }
 
-nav ul li a.active {
-    background-color: magenta;
+.navbar a:hover {
+    color: #666;
+}
+
+.navbar a.active {
+    color: magenta; /* Magenta für den aktiven Tab beibehalten */
+    position: relative;
+}
+
+.navbar a.active::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid magenta; /* Match der Farbe des aktiven Tabs */
+    border-radius: 2px;
+}
+
+.navbar a.active::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: magenta; /* Match der Farbe des aktiven Tabs */
+}
+
+body {
+    padding-top: 50px;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+}
+
+.content {
+    overflow-y: auto;
+    height: 100vh;
+    padding: 20px;
 }
 
 header, section {
@@ -44,13 +104,30 @@ header, section {
     text-align: center;
 }
 
-header h1, section h2 {
-    color: magenta;
+.logo-big {
+    position: absolute;
+    top: 20px;
+    left: 50%; /* Zentriert auf 50% der Seitenbreite */
+    transform: translateX(-50%); /* Korrektur für die zentrale Ausrichtung */
+    margin-top: 15px;
+    max-width: 10%;
 }
 
 .logo-big img {
-    max-width: 55%;
+    width: 100%;
     height: auto;
+}
+
+h1, h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: magenta; /* Überschriften in Magenta */
+}
+
+#the-app {
+    padding-top: 100px;
+    justify-content: center;
 }
 
 .content {
@@ -85,20 +162,19 @@ header h1, section h2 {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: transparent;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    border: none; 
-    outline: none; 
+    border: none;
+    outline: none;
 }
 
 .download-buttons img {
-    width: 15%; 
-    height: auto; 
-    margin: 10px; 
+    width: 15%;
+    height: auto;
+    margin: 10px;
 }
-
 
 .team-members {
     display: flex;
@@ -180,3 +256,10 @@ footer {
 .content p {
     margin-bottom: 20px;
 }
+
+.appstore-link {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
